@@ -14,10 +14,11 @@ function App() {
   }
 
     const { data, status } = useQuery("wordleWords", fetchWordleLetters);
+      const randomWords = data && data[Math.floor(Math.random() * data.length)].toLowerCase();
 
   return (
     <div>
-      <Wordle data={data}/>
+      <Wordle data={randomWords} />
     </div>
   );
 }
